@@ -1,20 +1,18 @@
-package org.example;
+package api.util;
+import api.model.User;
 
-public class User {
-
+public class UserCredentials {
     private String email;
     private String password;
     private String name;
 
-    public User(String email, String password, String name) {
+
+    public UserCredentials(String email, String password) {
         this.email = email;
         this.password = password;
-        this.name = name;
     }
-
-    public User(String email, String name) {
-        this.email = email;
-        this.name = name;
+    public static UserCredentials from(User user) {
+        return new UserCredentials(user.getEmail(), user.getPassword());
     }
 
     public String getEmail() {

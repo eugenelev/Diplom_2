@@ -1,12 +1,16 @@
+import api.model.Ingredient;
+import api.model.User;
+import api.util.UserGenerator;
+import api.util.UserCredentials;
 import io.restassured.response.ValidatableResponse;
-import org.example.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import api.client.IngredientClient;
+import api.client.OrderClient;
+import api.client.UserClient;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -14,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 public class GetOrderSpecificUserTest {
 
     private User user;
-    private org.example.UserClient UserClient;
+    private UserClient UserClient;
     private IngredientClient ingredientClient;
     private Ingredient ingredient;
     private List<String> ingredientList;

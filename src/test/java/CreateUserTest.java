@@ -1,8 +1,8 @@
+import api.model.User;
 import io.restassured.response.ValidatableResponse;
-import org.example.User;
-import org.example.UserClient;
-import org.example.UserCredentials;
-import org.example.UserGenerator;
+import api.client.UserClient;
+import api.util.UserCredentials;
+import api.util.UserGenerator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,14 +13,9 @@ import static org.junit.Assert.assertEquals;
 public class CreateUserTest {
 
     private User user;
-
     private UserClient UserClient;
-
     private String token;
-
-
     private static final String USER_EXISTS_TEXT = "User already exists";
-
     private static final String MESSAGE_NOT_ENOUGH_DATA = "Email, password and name are required fields";
 
 
@@ -36,7 +31,6 @@ public class CreateUserTest {
             UserClient.delete(token);
         }
     }
-
 
     @Test
     //Можно создать юзера

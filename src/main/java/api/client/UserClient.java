@@ -1,8 +1,12 @@
-package org.example;
+package api.client;
+import api.model.User;
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
+import api.util.UserCredentials;
+
 import static io.restassured.RestAssured.given;
 
-public class UserClient extends Client{
+public class UserClient extends Client {
 
     private static final String CREATE_PATH = "/api/auth/register";
 
@@ -12,6 +16,7 @@ public class UserClient extends Client{
 
     private static final String UPDATE_PATH = "/api/auth/user";
 
+    @Step("Создание пользователя")
     public ValidatableResponse create (User user) {
         return given()
                 .spec(getSpec())
@@ -22,6 +27,7 @@ public class UserClient extends Client{
 
     }
 
+    @Step("Авторизация юзера")
     public ValidatableResponse login(UserCredentials userCredentials) {
         return given()
                 .spec(getSpec())
@@ -32,6 +38,7 @@ public class UserClient extends Client{
 
     }
 
+    @Step("Удаление юзера")
     public ValidatableResponse delete(String token) {
         return given()
                 .spec(getSpec())
@@ -42,6 +49,7 @@ public class UserClient extends Client{
 
     }
 
+    @Step("Обновление данных юзера")
     public ValidatableResponse update(User user, String token) {
         return given()
                 .spec(getSpec())

@@ -1,8 +1,8 @@
+import api.model.User;
 import io.restassured.response.ValidatableResponse;
-import org.example.User;
-import org.example.UserClient;
-import org.example.UserCredentials;
-import org.example.UserGenerator;
+import api.client.UserClient;
+import api.util.UserCredentials;
+import api.util.UserGenerator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

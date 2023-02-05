@@ -1,8 +1,14 @@
+import api.model.Ingredient;
+import api.model.User;
+import api.util.UserGenerator;
 import io.restassured.response.ValidatableResponse;
-import org.example.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import api.client.IngredientClient;
+import api.client.OrderClient;
+import api.client.UserClient;
+import api.util.UserCredentials;
 import java.util.ArrayList;
 import java.util.List;
 import static org.apache.http.HttpStatus.*;
